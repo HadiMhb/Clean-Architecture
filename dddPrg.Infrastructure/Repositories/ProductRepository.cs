@@ -1,4 +1,5 @@
-﻿using dddPrg.Domain.Models.Products;
+﻿using dddPrg.Domain.Contracts.Repositories;
+using dddPrg.Domain.Models.Products;
 using dddPrg.Infrastructure.DbContexts;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace dddPrg.Infrastructure.Repositories
 {
-    public class ProductRepository
+    public class ProductRepository:IProductRepository
     {
         private dddPrgDbContext _dbContext;
         public ProductRepository(dddPrgDbContext dbContext)

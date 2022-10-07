@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace dddPrg.Application.ProductHandlers
 {
-    class AddProductCommandHandler : IRequestHandler<AddProductCommand, AddProductResult>
+    public class AddProductCommandHandler : IRequestHandler<AddProductCommand, AddProductResult>
     {
         private IProductRepository _productRepository;
 

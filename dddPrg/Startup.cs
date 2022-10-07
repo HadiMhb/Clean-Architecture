@@ -1,4 +1,7 @@
+using dddPrg.Domain.Contracts.Repositories;
 using dddPrg.Infrastructure.DbContexts;
+using dddPrg.Infrastructure.Repositories;
+using dddPrg.Ioc;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -36,6 +39,8 @@ namespace dddPrg
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "dddPrg", Version = "v1" });
             });
             PerformDbContextRegistration(services);
+            services.RegisterMediator();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
         }
 
