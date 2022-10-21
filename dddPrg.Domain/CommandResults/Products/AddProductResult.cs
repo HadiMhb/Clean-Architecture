@@ -1,4 +1,4 @@
-﻿namespace dddPrg.Domain.CommandResults
+﻿namespace dddPrg.Domain.CommandResults.Products
 {
     public class AddProductResult
     {

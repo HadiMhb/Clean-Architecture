@@ -40,7 +40,7 @@ namespace dddPrg
             });
             PerformDbContextRegistration(services);
             services.RegisterMediator();
-            services.AddScoped<IProductRepository, ProductRepository>();
+            services.RegisterServices();
 
         }
 

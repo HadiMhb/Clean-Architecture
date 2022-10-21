@@ -1,4 +1,5 @@
-﻿using dddPrg.Domain.Commands.Products;
+﻿using dddPrg.Domain.Commands.Orders;
+using dddPrg.Domain.Commands.Products;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace dddPrg.Controllers
 {
-    public class ProductController:ControllerBase
+    public class OrderController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public ProductController(IMediator mediator)
+        public OrderController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost,Route("[action]")]
-        public async Task<IActionResult> AddProduct(AddProductCommand command)
+        [HttpPost, Route("[action]")]
+        public async Task<IActionResult> AddOrder(AddOrderCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);

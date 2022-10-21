@@ -1,5 +1,5 @@
 ﻿using dddPrg.Application.ProductHandlers;
-using dddPrg.Domain.Commands;
+using dddPrg.Domain.Commands.Products;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;

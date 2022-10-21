@@ -1,5 +1,5 @@
-﻿using dddPrg.Domain.CommandResults;
-using dddPrg.Domain.Commands;
+﻿using dddPrg.Domain.CommandResults.Products;
+using dddPrg.Domain.Commands.Products;
 using dddPrg.Domain.Contracts.Repositories;
 using dddPrg.Domain.Models.Products;
 using MediatR;
