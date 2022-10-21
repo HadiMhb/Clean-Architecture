@@ -8,7 +8,7 @@ namespace dddPrg.Domain.Models.Orders
 {
     public class OrderItem
     {
-        public OrderItem(int id, int productId, int orderId, decimal price)
+        public OrderItem(int id, int orderId, int productId, decimal price)
         {
             Id = id;
             OrderId = orderId;

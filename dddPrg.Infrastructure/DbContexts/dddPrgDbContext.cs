@@ -27,6 +27,64 @@ namespace dddPrg.Infrastructure.DbContexts
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Product>().HasData(
+                new List<Product>()
+                {
+                    new Product(
+                        2,
+                        "title",
+                        "body",
+                        DateTime.Now,
+                        1000,
+                        "image path",
+                        "file path",
+                        1,
+                        true,
+                        false,
+                        true
+                        ),
+                    new Product(
+                          3,
+                        "title 2",
+                        "body 2",
+                        DateTime.Now,
+                        1000,
+                        "image path",
+                        "file path",
+                        1,
+                        true,
+                        false,
+                        false
+                        )
+
+                });
+
+            modelBuilder.Entity<CustomIdentityUser>().HasData(
+                new List<CustomIdentityUser>() {
+                    new CustomIdentityUser()
+                    {
+                        Id = 1,
+                        UserName="hadiMhb",
+                        Email="mohebi.hadi1996@gmail.com",
+                        CreatedAt=DateTime.Now,
+                        PhoneNumber="12345666",
+                        Mobile=09034456,
+                        PhoneNumberConfirmed=true,
+                        LoginCount=0,
+                        PurchaseNumber=0,
+                        IsActive=true,
+                        TwoFactorEnabled=false,
+                        IsEmailPublic=true,
+                        LockoutEnabled=false,
+                        AccessFailedCount=0
+                    }
+                });
+
+        }
         private readonly IMediator _mediator;
 
         public dddPrgDbContext(DbContextOptions<dddPrgDbContext> options,IMediator mediator) : base(options)

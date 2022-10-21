@@ -18,10 +18,17 @@ namespace dddPrg.Infrastructure.Repositories
             _dbContext = dbContext;
         }
 
-        public void Save(Order order)
+        public async Task Save(Order order)
         {
-            _dbContext.Orders.Update(order);
-            _dbContext.SaveChanges();
+            try
+            {
+                _dbContext.Orders.Update(order);
+                await _dbContext.SaveEntitiesAsync();
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
     }
 }

@@ -10,6 +10,6 @@ namespace dddPrg.Domain.Contracts.Repositories
 {
     public interface IOrderRepository
     {
-        void Save(Order product);
+        Task Save(Order product);
     }
 }

@@ -20,6 +20,8 @@ namespace dddPrg.Controllers
         [HttpPost, Route("[action]")]
         public async Task<IActionResult> AddOrder(AddOrderCommand command)
         {
+            command.OrderItems = new List<Domain.Models.Orders.OrderItem>();
+            command.OrderItems.Add(new Domain.Models.Orders.OrderItem(1,1,1,100));
             var result = await _mediator.Send(command);
             return Ok(result);
         }

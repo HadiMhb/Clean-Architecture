@@ -33,7 +33,7 @@ namespace dddPrg.Domain.Models.Orders
         {
             foreach(var item in orderItems)
             {
-                _orderItems.Add(item);
+                _orderItems.Add(new OrderItem(0,Id,item.ProductId,item.Price));
 
                 AddDomainEvent(new OrderAddedEvent(UserId));
             }
